@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Lightech</title>
+</head>
+<body>
+<h2>Compiling with DevMax</h2>
+<ol>
+<li>Go to the app local folder located at <code>%localappdata%\Packages\******.DevMax_****\LocalState</code> (You should open File Explorer, type in <code>%localappdata%\Packages\</code> and look for some folder with DevMax in the name.) and create 3 folders: <code>projects</code>, <code>include</code>, and <code>lib</code>.</li>
+<li>Obtain Windows' C/C++ headers: The easiest way is to install Visual Studio 2017 for Desktop Development. There are 2 set of headers:
+<ol type="i">
+<li>Windows SDK headers: Located in <code>C:\Program Files\Windows Kits\10\Include\$VERSION</code> where the current latest <code>$VERSION</code> is <code>10.0.14393.0</code>. There are 4 folders inside: <code>shared</code>, <code>ucrt</code>, <code>um</code>, and <code>winrt</code>. Usually we only need <code>ucrt</code> which provides those standard C headers i.e. <code>stdio.h</code> and the like but you should copy all of them to the <code>include</code> folder that you created in Step 1.</li>
+<li>Microsoft Visual C++ headers: Located in <code>$VISUAL_STUDIO_INSTALL_DIR\VC\Tools\MSVC\$VERSION\include</code> and the <code>$VERSION</code> is something like <code>14.10.24728</code>. Copy the content of this folder to something like <code>msvc</code> in the <code>include</code> folder that you created in Step 1. This provides you with those C++ headers like <code>iostream</code>.</li>
+</ol>
+<li>(OPTIONAL) Copy standard libraries for linking. Again, there are two sets of <code>*.lib</code> files to copy. The first are located in  <code>C:\Program Files\Windows Kits\10\Lib\$VERSION\{ucrt,um}\x86</code> and the second are in <code>$VISUAL_STUDIO_INSTALL_DIR\VC\Tools\MSVC\$VERSION\lib\x86</code>. Just a head-up: You only need <code>kernel32.lib</code>, </code>ucrt.lib</code>  in the former and </code>msvcrt.lib</code> and <code>vcruntime.lib</code> in the latter to produce console applications. Just copy them to the <code>lib</code> folder that you created.
+</li>
+<li>In <code>projects</code>: Create folder for each of your project, put your source code there and write build descriptions in <code>project.json</code>. Try cloning <a href="https://github.com/light-tech/DevMaxSamples.git">our repo</a> as a starting point.</li>
+<li>Now you should be able to build the <code>HelloWorld</code> application.</li>
+</ol>
+<h2>Question &amp; Answers</h2>
+<p><b>Q: Why don't you distribute the headers and libraries with the app?</b></p>
+<p><i>Answer</i>: Copyright issue, of course. We might distribute a non-Microsoft C/C++ standard library in future release.</p>
+<p><b>Q: If we have to install Visual Studio anyway, why should we use DevMax?</b></p>
+<p><i>Answer</i>: You only need to set it up once, 7-zipped the files (approximately 80MB) and you can use it anywhere. And you don't need to do it in your machine but a virtual machine; which avoid damaging your computer.</p>
+<p><b>Q: Can't you allow headers, libraries and project to be outside of the app's folder?</b></p>
+<p><i>Answer</i>: Due to severe security restrictions imposed by Microsoft, we must do it that way.</p>
+</body>
+</html>
