@@ -1,0 +1,116 @@
+<html>
+<head>
+  <title>Lightech</title>
+</head>
+<body>
+  <p>Due to our oversight of not taking into account the fact
+that LLVM uses some Win32 API unsupported in the Windows Store
+so that our app cannot pass the certification process, we have
+to devise a solution of using a separate C++ Compiler app
+instead of bundling the compiler in DevMax as originally
+promised.</p>
+  <p>We are sorry for all these inconvenience.</p>
+
+  <h2>Compiling C/C++ with DevMax</h2>
+
+  <p>Right now, the app is quite primitive so we have not
+supply the UI to do all these set-up so you need to follow
+these steps manually.</p>
+
+  <p><strong>After</strong> you installed the our
+<a href="https://github.com/light-tech/light-tech.github.io/releases">C++ Compiler</a> app,
+navigate to
+  <code>%localappdata%\Publishers\8vrbkgtyqrt4j</code>
+with Windows Explorer. We shall refer to this folder as
+<code>$DATA</code> subsequently. There you will see 3 folders:
+  <code>C++Projects</code>,
+  <code>C++Include</code>, and
+  <code>C++Lib</code>. It is needless to say what the purposes
+of those folders are.</p>
+
+  <ol>
+    <li><strong>Obtain Windows' C/C++ headers</strong>:
+    The easiest way is to install Visual Studio 2017 for
+Desktop Development. There are 2 set of headers you need to
+acquire:
+      <ol type="i">
+        <li><i>Windows SDK headers</i>: Located in
+<code>C:\Program Files\Windows Kits\10\Include\$VERSION</code>
+where <code>$VERSION</code> refers to Windows 10 SDK version such as
+<code>10.0.14393.0</code>. There are 4 folders inside:
+<code>shared</code>,
+<code>ucrt</code>,
+<code>um</code>, and
+<code>winrt</code>.
+For desktop (console application) development, usually we only
+need <code>ucrt</code> which provides those standard C headers
+such as <code>stdio.h</code>.
+It is best to copy all of them to the <code>$DATA\C++Include</code>
+folder.</li>
+        <li><i>Microsoft Visual C++ headers</i>:
+Located in <code>$VISUAL_STUDIO_INSTALL_DIR\VC\Tools\MSVC\$VERSION\include</code>
+The <code>$VERSION</code> is something like <code>14.10.24728</code>.
+Copy the content of this folder to something like <code>msvc</code>
+in the <code>$DATA\C++Include</code> folder.
+This provides you with those C++ headers such as
+<code>iostream</code>.</li>
+      </ol>
+    <li><strong>Copy standard libraries for linking:</strong>
+Again, there are two sets of <code>*.lib</code> files to copy.
+The first are located in
+<code>C:\Program Files\Windows Kits\10\Lib\$VERSION\{ucrt,um}\x86</code>
+and the second are in
+<code>$VISUAL_STUDIO_INSTALL_DIR\VC\Tools\MSVC\$VERSION\lib\x86</code>.
+You can guess their purposes. Just copy the <code>*.lib</code>
+to <code>$DATA\C++Lib</code>.
+<strong>TIP</strong>: Just a head-up, you only need
+<code>kernel32.lib</code>,
+</code>ucrt.lib</code> in the former and
+</code>msvcrt.lib</code> and
+<code>vcruntime.lib</code> in the latter to produce console
+applications. 
+    </li>
+
+  <li><strong>Add C++ projects</strong>:
+  In <code>$DATA\C++Projects</code>, create folder for each
+of your project, put your source code there and
+write build descriptions in <code>project.json</code>.
+Try cloning
+<a href="https://github.com/light-tech/DevMaxSamples.git">our repo</a>
+as a starting point.</li>
+</ol>
+
+  <p>Now you should be able to build the application.</p>
+
+  <p>Open DevMax (version 2.0 [still in certification]
+required) and click on the open project button (next to the
+button to open a folder). Select the project you want. Then
+in <strong>Project</strong> tab, you should see a list of
+build definitions that can be executed. Click
+<strong>Run</strong> to run the build definition in C++ Compiler
+app. You should see the build output such as compilation
+warning and errors in C++ Compiler.</p>
+
+  <image src="compile.png" /> <!-- width="1400" height="900" -->
+
+  <h2>Question &amp; Answers</h2>
+  <p><b>Q: Why don't you distribute the headers and
+libraries with the app?</b></p>
+  <p><i>Answer</i>: Copyright issue, of course. Those are
+properties of Microsoft. If you can get a statement from
+the company stating that we can freely distribute them,
+we shall do that. We might distribute a non-Microsoft
+C/C++ standard library in future release.</p>
+  <p><b>Q: If we have to install Visual Studio anyway,
+why should we use DevMax?</b></p>
+  <p><i>Answer</i>: You only need to set it up once,
+7-zipped the files (approximately 80MB) and you can use
+it anywhere. And you don't need to do it in your machine
+but a virtual machine; which avoid damaging your computer.
+  </p>
+  <p><b>Q: Can't you allow headers, libraries and project
+to be outside of the aforementioned folders?</b></p>
+  <p><i>Answer</i>: Due to severe security restrictions
+imposed by Microsoft, we must do it that way.</p>
+</body>
+</html>
