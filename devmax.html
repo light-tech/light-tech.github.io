@@ -68,7 +68,7 @@ to <code>$DATA\C++Lib</code>.
 </code>ucrt.lib</code> in the former and
 </code>msvcrt.lib</code> and
 <code>vcruntime.lib</code> in the latter to produce console
-applications. 
+applications.
     </li>
 
   <li><strong>Add C++ projects</strong>:
@@ -82,14 +82,17 @@ as a starting point.</li>
 
   <p>Now you should be able to build the application.</p>
 
-  <p>Open DevMax (version 2.0 [still in certification]
-required) and click on the open project button (next to the
-button to open a folder). Select the project you want. Then
+  <p>Open DevMax (version &gt;2.0 required) and click on the open
+project button (next to the button to open a folder). Select the project you want. Then
 in <strong>Project</strong> tab, you should see a list of
 build definitions that can be executed. Click
-<strong>Run</strong> to run the build definition in C++ Compiler
+<strong>Run</strong> button to run the build definition in C++ Compiler
 app. You should see the build output such as compilation
 warning and errors in C++ Compiler.</p>
+
+  <p>With C++ Compiler version 2.2 release, one can build Win32 GUI applications as well.
+See our <a href="https://github.com/light-tech/DevMaxSamples.git">HelloWorld Win32 sample</a>.
+You will need at least <code>User32.lib</code> and <code>Gdi32.lib</code> to link to the executable.</p>
 
   <image src="compile.png" /> <!-- width="1400" height="900" -->
 
@@ -113,4 +116,4 @@ to be outside of the aforementioned folders?</b></p>
   <p><i>Answer</i>: Due to severe security restrictions
 imposed by Microsoft, we must do it that way.</p>
 </body>
-</html>
+</html> 
