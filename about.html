@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>About Lightech</title>
+    <link rel="stylesheet" href="css/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+    <!--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">-->
+    <link rel="stylesheet" href="css/layouts/marketing.css">
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="index.html">Lightech</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="about.html" class="pure-menu-link">About</a></li>
+            <li class="pure-menu-item"><a href="devmax.html" class="pure-menu-link">DevMax</a></li>
+            <!--<li class="pure-menu-item"><a href="#" class="pure-menu-link">Sign Up</a></li>-->
+        </ul>
+    </div>
+</div>
+
+    <div class="content">
+
+        <h2 class="content-head is-center">About Us</h2>
+
+<p>Ironically, as technology progresses and our chips
+get faster and faster, the world becomes less and less
+efficient. That is because there is now little incentive
+for developers to optimize their code compared to the
+situation at the infancy of computing. The most prominant
+examples of this trend are</p>
+<ul>
+  <li><strong>Microsoft</strong>: Since the early 2000s,
+the company made a strategic shift to C# to replace the
+dominant programming language of choice C++. While C# does
+offer advantages over C++, it suffers on performance and
+the program size becomes significantly bigger. Visual Studio,
+the integrated development environment (IDE) of choice
+for Microsoft's Windows platform, is getting bigger and
+bigger while adding little compared to versions released
+years ago. Skype used to be a 20MB app. Now it was 100MB.
+  </li>
+  <li><strong>Java</strong>: A huge percent of software is
+written in Java. The "security", "portability", "easy to learn"
+etc. of Java comes at the expense of, you guessed it,
+efficiency. Java program requires availability of the
+interpreter i.e. installation of additional software.
+  </li>
+  <li><strong>Facebook</strong>: Look at Facebook's Messenger
+app for Universal Windows Platform. The app installs on a phone
+at 200MB and takes up a huge amount of RAM. (Facebook said
+the minimum RAM requirement is 2GB. That is an extremely
+unreasonable amount for a simplistic messaging application.)
+  </li>
+  <li><strong>The shift to applications using JavaScript</strong>:
+An example is Visual Studio Code.
+  </li>
+</ul>
+
+<p>We advocate ourselves to work toward an efficient world
+of technology. The name <em>Lightech</em> is partially chosen
+to reflect both properties of light:
+its <strong>weightlessness</strong> (note: this is rhetoric,
+not true in physics) and <strong>fastest</strong> (note:
+again, this is rhetoric, we do not know if this is true
+in physics; it was assumed in Einstein theory though).
+The third and in fact original meaning is the dedication to
+innovation, as a light bulb usually used to illustrate new
+and novel ideas.</p>
+
+<p>This philosophy is reflected in every product we built.
+To illustrate our point:</p>
+<ul>
+  <li><strong>LawTeX</strong>: This is our very first product,
+TeX/LaTeX integrated writing environment. Not only does the
+app improves on the installation weight and speed, it also
+offers improvement in the traditional development workflow:
+Most LaTeX editor requires user to press the button to
+compile the document. LawTeX offers the ability to
+automatically recompile and re-render the generated DVI
+when you pause typing, saving the need to repeatedly press
+button to recompile the document.
+  (The same point can be said about any other IDE; though
+it makes less sense to do the same for programming languages
+like C/C++.)
+  This is in fact the very reasons we developed LawTeX.
+  </li>
+  <li><strong>OnlyTube</strong>: Our efficient YouTube client.
+OnlyTube prevent crashes of YouTube website on phones with
+little RAM like Lumia 635. It runs at roughly 50MB of RAM
+compared to 300-400MB watching the same video on browser.
+It also enhances user experience:
+  <ul>
+    <li>Comments are loaded as you scroll down the apps
+while you need to repeatedly press <em>Load more</em> on
+the browser (and then scroll down to see the newly loaded
+comments).
+    </li>
+    <li>Search results are likewise kept. On the browser,
+you need to open video in new tabs (and consuming a few
+hundred MB of RAM or so) and go back to search result page
+again and again if you want to see another search video. This
+is not possible on phone with limited RAM since opening the
+video in new tab will crash the search page.
+    </li>
+  </ul>
+  Beyond that, OnlyTube does not download video thumbnail
+images, saving a huge amount of RAM and data. Imagine loading
+100 search results with 100KB image each, you already consume
+10MB of data.
+  While we admit the official app (not available for Windows 10
+anyway) looks good, we like an efficient one more. Also, we
+are aware that data is probably not a concern in the US
+but not everywhere else; this is another point of inefficiency
+but due to users' choice instead of developers.
+  At 200KB download and 800KB installed, OnlyTube beats other
+YouTube options most of which weight at least 50MB installed,
+not to count the amount of temporary data they saves.
+  <li><strong>Git It</strong>: Our Git client. Once again,
+our application is roughly 3MB installed on a Lumia 635
+and 1MB on Desktop compared to 400MB full installation of
+the official Git client.
+  To our knowledge, this is the first Git client
+available for Windows 10 Mobile platform.<br/>
+  Git It fixes some design flaw of the official client such
+as putting the revision history right on the front page. In
+our experience, most people opened Git GUI also open the
+revision history; we thus save the users a lot of redundant
+mouse actions.<br/>
+  Git It has consideration and optimized for touchscreen
+interaction.<br/>
+  We do not claim Git It to be as powerful as the official
+client. However, we believe it is sufficient for a lot of
+use cases; such as researcher writing papers and short
+scripts (more generally, those who do not require features
+such as branching and submodules).
+  </li>
+  <li><strong>DevMax</strong>: Our C/C++ development platform
+(to write programs for Windows PC). Drawing from the
+inefficiency of most C/C++ IDE available, we improvise this
+tool with the goals:
+  <ul>
+    <li>Use as little space as possible: 800KB installed
+(without compiler, a separate C++ compiler app weight roughly
+30MB) compared to at least 1GB basic installation (solution
+loading + editor only) of Visual Studio Community
+or 300MB installation of the supposedly much more lightweight
+Visual Studio Code.
+    </li>
+    <li>Efficient and fast: Written in C++ instead of
+Java, C# or JavaScript.
+    </li>
+    <li>Better compiler workflow: Visual Studio runs (lots of)
+external processes to compile. Our C++ compiler is integrated.
+This means there is no need to reload, reinitialize,
+reprocesses (system headers), etc. Our hello world application
+compilation is at least 10 times faster than Visual Studio.
+    </li>
+  </ul>
+  DevMax is in fact used to develop itself (and from now on,
+all of our other apps)!
+  </li>
+  <li><strong>ReWeB</strong>: Our web browser. ReWeB removes
+images and scripts; making sites unviewable on phones with
+little RAM (constant site crashing and reloading) accessible
+to those phones. As a consequence, ReWeB saves precious data.
+ReWeB also do not cache website to save disk space storage.
+A typical Chrome installation consumes 400MB-2GB for the
+browser and cached contents.
+  </li>
+</ul>
+
+        <!--<div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    Get Started Quickly
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i>
+                    Responsive Layouts
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-th-large"></i>
+                    Modular
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i>
+                    Plays Nice
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <img width="300" alt="File Icons" class="pure-img-responsive" src="img/common/file-icons.png">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor.
+            </p>
+        </div>
+    </div>-->
+
+    <!--<div class="content">
+        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+
+                        <label for="name">Your Name</label>
+                        <input id="name" type="text" placeholder="Your Name">
+
+
+                        <label for="email">Your Email</label>
+                        <input id="email" type="email" placeholder="Your Email">
+
+                        <label for="password">Your Password</label>
+                        <input id="password" type="password" placeholder="Your Password">
+
+                        <button type="submit" class="pure-button">Sign Up</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Contact Us</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+
+    </div>-->
+
+    <!--<div class="footer l-box is-center">
+        View the source of this layout to learn more. Made with love by the YUI Team.
+    </div>-->
+
+</div>
+
+</body>
+</html>
