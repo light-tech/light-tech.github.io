@@ -42,7 +42,7 @@
         <p>Due to our oversight of not taking into account the fact
 that LLVM uses some Win32 API unsupported in the Windows Store
 so that our app cannot pass the certification process, we have
-to devise a solution of using a separate <a href="https://github.com/light-tech/light-tech.github.io/releases">C++ Compiler</a> app
+to devise a solution of using a separate <a href="https://github.com/light-tech/UniversalCppCompiler/releases">C++ Compiler</a> app
 instead of bundling the compiler in DevMax as originally
 promised.</p>
   <p>We are sorry for all these inconvenience.</p>
@@ -54,7 +54,7 @@ supply the UI to do all these set-up so you need to follow
 these steps manually.</p>
 
   <p><strong>After</strong> you installed the our
-<a href="https://github.com/light-tech/light-tech.github.io/releases">C++ Compiler</a> app,
+<a href="https://github.com/light-tech/UniversalCppCompiler/releases">C++ Compiler</a> app,
 navigate to
   <code>%localappdata%\Publishers\8vrbkgtyqrt4j</code>
 with Windows Explorer. We shall refer to this folder as
@@ -112,7 +112,7 @@ applications.
 of your project, put your source code there and
 write build descriptions in <code>project.json</code>.
 Try cloning
-<a href="https://github.com/light-tech/DevMaxSamples.git">our repo</a>
+<a href="https://github.com/light-tech/DevMaxHelloWorld">our repo</a>
 as a starting point.</li>
 </ol>
 
@@ -126,8 +126,10 @@ build definitions that can be executed. Click
 app. You should see the build output such as compilation
 warning and errors in C++ Compiler.</p>
 
-  <p>With C++ Compiler version 2.2 release, one can build Win32 GUI applications as well.
-See our <a href="https://github.com/light-tech/DevMaxSamples.git">HelloWorld Win32 sample</a>.
+  <p>With C++ Compiler version 2.2 release, one can build Win32 and Direct X GUI applications as well.
+See our <a href="https://github.com/light-tech/DevMaxHelloWorld">HelloWorld Win32 sample</a>,
+our <a href="https://github.com/light-tech/DevMaxDirectXTutorial">Direct X tutorial sample</a>
+and many others on our GitHub.
 You will need at least <code>User32.lib</code> and <code>Gdi32.lib</code> to link to the executable.</p>
 
   <image src="compile.png" /> <!-- width="1400" height="900" -->
@@ -139,7 +141,11 @@ libraries with the app?</b></p>
 properties of Microsoft. If you can get a statement from
 the company stating that we can freely distribute them,
 we shall do that. We might distribute a non-Microsoft
-C/C++ standard library in future release.</p>
+C/C++ standard library in future release. That being said,
+we have built a tool <a href="https://github.com/light-tech/VisualCppInstaller">Visual C++ Installer</a>
+(you guess it, using our very own DevMax and C++ Compiler apps)
+that helps you fetch the files easily: It downloads the packages
+and unpack them directly so you do not have to install Visual Studio.</p>
   <p><b>Q: If we have to install Visual Studio anyway,
 why should we use DevMax?</b></p>
   <p><i>Answer</i>: You only need to set it up once,
