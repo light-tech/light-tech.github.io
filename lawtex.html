@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>LawTeX Guide</title>
+    <link rel="stylesheet" href="css/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+    <!--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">-->
+    <link rel="stylesheet" href="css/layouts/marketing.css">
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="index.html">Lightech</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="about.html" class="pure-menu-link">About</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="devmax.html" class="pure-menu-link">DevMax</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">We Despise Inefficiency</h1>
+        <p class="splash-subhead">
+            our working motto.
+        </p>
+        <p>
+            <a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a>
+        </p>
+    </div>
+</div>-->
+
+<!--<div class="content-wrapper">-->
+    <div class="content">
+
+		<h1 class="content-head is-center">LawTeX Guide</h1>
+ 
+		<p>LawTeX was designed to be the <em>next generation</em> of TeX and LaTeX IDE:</p>
+		<ul>
+			<li>Quick to deploy: No 400MB of download and set-up; packages are fetched as needed.</li>
+			<li>Touch friendly: As tablets and hybrid devices like Microsoft's Surface take over the market, application should integrates well with touch input. Traditional Windows desktop app are not very touch friendly since the menu are hard to click on touchscreen.</li>
+			<li>Efficient: Consume as little memory as possible.</li>
+			<li>High productivity: Automatic recompile and refresh the display when user pauses editing.</li>
+			<li>Reliability: Should not depend on stable Internet connection.</li>
+			<li>Availability on various devices such as PC, tablet, phones, ...</li>
+        </ul>
+        <p>To satisfy these goals, we use <b>Knuth's original TeX program</b> and embrace <b>DVI files</b> instead of PDF files output.
+        This is because DVI are much smaller in size since they do not need to contain the fonts. Knuth's program is known to be pretty
+        much bug-free, compared to more modern engines. It is also much more compact in size.</p>
+        <p>In this document, we describe the implication of those design choices on how one should use LawTeX.</p>
+
+		<h2>Conditional Compilation</h2>
+
+		<p>LawTeX is by no mean designed to replace modern TeX engines such as PDFTeX but to complement them.
+		A typical user uses LawTeX to quickly write or draft the documents and when he/she finishes, he/she then
+		use traditional PDFTeX to produce the print-quality PDF output. Evidently, some LaTeX code might only be
+		applicable to PDFTeX and the final result so one needs a way to turn on/off certain piece of LaTeX code
+		depending on whether we are compiling the final output for publishing or writing drafts. For example, certain
+		PostScript fonts are only available on PDFTeX.</p>
+		
+		<p>The analogy is developing software in C/C++ where one uses various preprocessor directive
+		<code>#if* ... #endif</code> to conditionally turn on/off codes during development or release.</p>
+
+		<p>In LaTeX, this is likewise achieved by definining new <code>\if</code> commands or uses existing
+		<code>\ifPDFTeX .. \fi</code> in the <b>iftex</b> package.</p>
+	
+		<h2>Keyboard</h2>
+
+		<p>LawTeX has an option to auto-indent code and code suggestion. When you hit <code>Enter</code>, various
+		things can happen. If there is a suggestion (you must enable code suggestion in Settings), LawTeX will
+		insert the first suggestion automatically. If you don't want that behavior, you can use <code>Shift + Enter</code>
+		for a new line. If auto-indent is on and you don't want that, use <code>Ctrl + Enter</code>.</p>
+
+		<h2>Graphic Support via SVG</h2>
+
+		<p>The unique feature of LawTeX is its ability to recompile as user pauses. This feature relies on the fact
+		that the compiler can produce DVI output quickly AND the output file can be quicly parsed and rendered.
+		This does not work out well for raster graphic and PDF since they are complicated formats. (Think about having
+		to decode a PNG image over and over again everytime you recompile.)</p>
+
+		<p>On the other hand, most illustrations in scientific world come from vector graphic. Thus, we make a choice of
+		supporting vector graphic with SVG by adding new DVI <code>special</code>.</p>
+
+        <!--<div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    Get Started Quickly
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i>
+                    Responsive Layouts
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-th-large"></i>
+                    Modular
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i>
+                    Plays Nice
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <img width="300" alt="File Icons" class="pure-img-responsive" src="img/common/file-icons.png">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor.
+            </p>
+        </div>
+    </div>-->
+
+    <!--<div class="content">
+        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+
+                        <label for="name">Your Name</label>
+                        <input id="name" type="text" placeholder="Your Name">
+
+
+                        <label for="email">Your Email</label>
+                        <input id="email" type="email" placeholder="Your Email">
+
+                        <label for="password">Your Password</label>
+                        <input id="password" type="password" placeholder="Your Password">
+
+                        <button type="submit" class="pure-button">Sign Up</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Contact Us</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+
+    </div>-->
+
+    <!--<div class="footer l-box is-center">
+        View the source of this layout to learn more. Made with love by the YUI Team.
+    </div>-->
+
+</div>
+
+</body>
+</html>
