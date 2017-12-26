@@ -45,7 +45,10 @@ so that our app cannot pass the certification process, we have
 to devise a solution of using a separate <a href="https://github.com/light-tech/UniversalCppCompiler/releases">C++ Compiler</a> app
 instead of bundling the compiler in DevMax as originally
 promised.</p>
-  <p>We are sorry for all these inconvenience.</p>
+  <p>We are sorry for all these inconvenience. Even so, we believe
+that this works better in our favor because with the current 2-app
+approach, the IDE app DevMax do not crash if the C++ compiler
+app crashes.</p>
 
   <h2>Compiling C/C++ with DevMax</h2>
 
@@ -54,8 +57,9 @@ supply the UI to do all these set-up so you need to follow
 these steps manually.</p>
 
   <p><strong>After</strong> you installed the our
-<a href="https://github.com/light-tech/UniversalCppCompiler/releases">C++ Compiler</a> app,
-navigate to
+<a href="https://github.com/light-tech/UniversalCppCompiler/releases">C++ Compiler</a> app
+(go <a href="https://github.com/light-tech/UniversalCppCompiler">here</a>
+for detail installation instructions), navigate to
   <code>%localappdata%\Publishers\8vrbkgtyqrt4j</code>
 with Windows Explorer. We shall refer to this folder as
 <code>$DATA</code> subsequently. There you will see 3 folders:
@@ -103,7 +107,7 @@ to <code>$DATA\C++Lib</code>.
 <code>kernel32.lib</code>,
 </code>ucrt.lib</code> in the former and
 </code>msvcrt.lib</code> and
-<code>vcruntime.lib</code> in the latter to produce console
+<code>vcruntime.lib</code> in the latter to produce basic console
 applications.
     </li>
 
@@ -133,6 +137,16 @@ and many others on our GitHub.
 You will need at least <code>User32.lib</code> and <code>Gdi32.lib</code> to link to the executable.</p>
 
   <image src="compile.png" /> <!-- width="1400" height="900" -->
+
+  <h2>Interpret C/C++ program with DevMax</h2>
+
+  <p>Version 2.4.2 of C++ Compiler supports interpreting of C/C++
+source code directly. You can try our
+<a href="https://github.com/light-tech/DevMaxInterpreter">interpreter samples</a>
+by cloning it into <code>C++Projects</code>. Most of the interpreter
+examples does not require any extra step of setting up headers and
+library as in case of compilation. Watch it in action
+(<a href="trailer.mp4">Download link [.mp4, 3MB]</a>): <video src="Trailer.mp4" /></p>
 
   <h2>Question &amp; Answers</h2>
   <p><b>Q: Why don't you distribute the headers and
