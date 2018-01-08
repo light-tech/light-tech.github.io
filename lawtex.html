@@ -38,7 +38,7 @@
     <div class="content">
 
 		<h1 class="content-head is-center">LawTeX Guide</h1>
- 
+
 		<p>LawTeX was designed to be the <em>next generation</em> of TeX and LaTeX IDE:</p>
 		<ul>
 			<li>Quick to deploy: No 400MB of download and set-up; packages are fetched as needed.</li>
@@ -84,6 +84,18 @@
 
 		<p>On the other hand, most illustrations in scientific world come from vector graphic. Thus, we make a choice of
 		supporting vector graphic with SVG by adding new DVI <code>special</code>.</p>
+
+		<h2>BibTeX Support</h2>
+
+		<p>Version 2.5 (only available for PC) supports bibliography processing via BibTeX. To use it:</p>
+<ol>
+  <li>Open your TeX document and compile it once. This will produce the auxiliary <code>.aux</code> file that BibTeX will processes.</li>
+  <li>Open the bibliography database file <code>.bib</code>, compile it by pressing the Play i.e. triangle button (or just wait a bit if you have automatic recompile on). This step is only to add the file to the internal file system.</li>
+  <li>Switch the editor back to the main TeX document, press the BibTeX button (the bold B button under the three dots) to generate the LaTeX code for bibliography list file <code>.bbl</code> for the document.</li>
+  <li>Recompile your TeX document twice.</li>
+</ol>
+
+		<p>As you write your document, step 2 should be redone when you edit the <code>.bib</code> file (for e.g. add new article to the database); a recompilation updates the copy of the file in the internal file system [in the future, we might eliminate this step by eliminating separate copy using file content reference but please bear with it for now]. Redo step 3 if you <code>\cite</code> a new article. Traditional TeX IDE such as WinEdt reperform the 4 steps every time you recompile and so is inefficient.</p>
 
         <!--<div class="pure-g">
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
